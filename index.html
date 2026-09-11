@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Beyond the Screen — Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+<button id="restartDemo" class="restart-btn" onclick="restartDemo()">&#8635; Restart demo</button>
+
+<div class="page">
+  <div class="phone-frame">
+
+    <!-- ============ SCREEN 0: CRM email touchpoint (alternate entry point) ============ -->
+    <section class="screen email-screen" data-screen="0" onclick="goToScreen(1)">
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <div class="email-topbar">
+        <button class="email-back" onclick="goToScreen(1)" aria-label="Back">&#8249;</button>
+        <div class="email-topbar-icons">
+          <span>&#128229;</span>
+          <span>&#128465;</span>
+          <span>&#9993;</span>
+          <span>&#8226;&#8226;&#8226;</span>
+        </div>
+      </div>
+
+      <div class="email-body">
+        <h1 class="email-subject">Your Exclusive Offer For The Strokes! <span class="email-inbox-pill">Inbox</span></h1>
+
+        <div class="email-sender-row">
+          <div class="email-avatar">T</div>
+          <div class="email-sender-info">
+            <div class="email-sender-name">The Bowery Presents</div>
+            <div class="email-sender-date">Aug 11</div>
+            <div class="email-sender-to">to me <span>&#9662;</span></div>
+          </div>
+          <div class="email-unsubscribe">Unsubscribe</div>
+        </div>
+
+        <img src="images/bowery-banner.png" alt="The Bowery Presents" class="email-banner-img">
+
+        <div class="email-offer-banner" onclick="goToScreen(1)" role="button" aria-label="Ready to meet someone new?">Ready to meet someone new?</div>
+
+        <img src="images/strokes-poster-crop.png" alt="The Strokes poster" class="email-poster-img">
+
+        <div class="email-offer-body">
+          <img src="images/hinge-h-icon.png" alt="Hinge" class="email-h-icon">
+          <p><strong>Download Hinge now</strong> to see who's going to the concert</p>
+        </div>
+      </div>
+
+      <div class="email-reply-bar">
+        <button class="email-reply-pill">&#8630; Reply</button>
+        <button class="email-reply-pill">&#8631; Forward</button>
+        <span class="email-emoji">&#9786;</span>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 1: AXS event page ============ -->
+    <section class="screen axs-screen" data-screen="1" onclick="goToScreen('1a')">
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <div class="axs-topbar">
+        <button class="axs-back" onclick="event.stopPropagation(); goToScreen(0)" aria-label="Back">&#8249;</button>
+        <div class="axs-title">
+          <div class="axs-title-main">The Strokes - Admissions</div>
+          <div class="axs-title-sub">ng Meadows Corona Park, Corona, NY</div>
+        </div>
+        <button class="axs-info" aria-label="Info">&#9432;</button>
+      </div>
+
+      <div class="axs-tabs">
+        <div class="axs-tab">Tickets (2)</div>
+        <div class="axs-tab axs-tab--active">Event Info</div>
+      </div>
+
+      <div class="axs-body">
+        <h2 class="axs-h2">Event Details</h2>
+
+        <div class="axs-pill">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="#C7CEDD" stroke-width="1.3"/><path d="M8 4.5V8l2.5 1.5" stroke="#C7CEDD" stroke-width="1.3" stroke-linecap="round"/></svg>
+          <span>Doors Open @ 3:00 PM</span>
+        </div>
+
+        <p class="axs-copy">
+          As part of The Bowery Presents' ongoing commitment to the communities its events call
+          home, a portion of ticket revenue from the show will be donated to the Alliance for
+          <a href="#" class="axs-link">See More</a>
+        </p>
+
+        <button class="hinge-banner" id="hingeBanner" onclick="goToScreen('1a')">
+          <img src="images/hinge-h-icon.png" alt="Hinge" class="hinge-banner-logo">
+          <span class="hinge-banner-copy">Want to meet someone who loves The Strokes as much as you? <strong>Download Hinge Now</strong></span>
+        </button>
+
+        <h2 class="axs-h2">Venue Details</h2>
+
+        <div class="axs-venue-panel">
+          <span>Flushing Meadows Corona Park</span>
+          <span class="axs-chevron">&#8250;</span>
+        </div>
+
+        <div class="axs-map-wrap">
+          <img src="images/axs-map.jpg" alt="Venue map" class="axs-map-img">
+          <div class="axs-map-caption">Maps <a href="#" class="axs-link">Legal</a></div>
+        </div>
+
+        <div class="axs-directions">
+          <div>
+            <div class="axs-directions-label">Directions</div>
+            <div class="axs-directions-addr">14 United Nations Avenue South, Corona, NY 11368</div>
+          </div>
+          <span class="axs-car">&#128663;</span>
+        </div>
+
+        <div class="axs-footer">
+          <span class="axs-shield">&#128737;</span>
+          <span>Check out venue policies <a href="#" class="axs-link">here</a>.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 1a: Shake Shack QR touchpoint ============ -->
+    <section class="screen shakeshack-screen" data-screen="1a" onclick="goToScreen('1b')">
+      <img src="images/wristband-qr.jpg" alt="" class="shakeshack-bg">
+      <div class="shakeshack-scrim"></div>
+
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <button class="back-chevron back-chevron--light" onclick="event.stopPropagation(); goToScreen(1)" aria-label="Back">&#8249;</button>
+
+      <div class="camera-icon-bar">
+        <span>&#9889;</span>
+        <span>LIVE</span>
+        <span>9:16</span>
+        <span>&#8635;</span>
+      </div>
+
+      <div class="wristband-qr-target">
+        <span class="qr-bracket qr-bracket--tl"></span>
+        <span class="qr-bracket qr-bracket--tr"></span>
+        <span class="qr-bracket qr-bracket--bl"></span>
+        <span class="qr-bracket qr-bracket--br"></span>
+      </div>
+
+      <div class="download-hinge-pill">Download Hinge</div>
+
+      <div class="camera-shutter-bar">
+        <div class="camera-mode-row">
+          <span class="camera-mode">VIDEO</span>
+          <span class="camera-mode camera-mode--active">PHOTO</span>
+          <span class="camera-mode">PORTRAIT</span>
+        </div>
+        <div class="camera-shutter-row">
+          <div class="camera-thumb"></div>
+          <div class="camera-shutter-btn"></div>
+          <div class="camera-flip-btn">&#8635;</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 1b: App Store product page (real screenshot) ============ -->
+    <section class="screen appstorepage-screen" data-screen="1b" onclick="goToInstalling()">
+      <img src="reference/appstore-hinge-real.png" alt="" class="appstorepage-img">
+      <button class="back-chevron appstorepage-back-hit" onclick="event.stopPropagation(); goToScreen('1a')" aria-label="Back">&#8249;</button>
+    </section>
+
+    <!-- ============ SCREEN 1c: Installing ============ -->
+    <section class="screen installing-screen" data-screen="1c">
+      <div class="installing-content">
+        <div class="installing-icon-wrap">
+          <img src="images/hinge-h-icon.png" alt="Hinge" class="installing-icon">
+          <svg class="installing-ring" viewBox="0 0 100 100" width="96" height="96">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="#E5E5E5" stroke-width="6"/>
+            <circle id="installingRingProgress" class="installing-ring-progress" cx="50" cy="50" r="44" fill="none" stroke="#1A1A1A" stroke-width="6" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          </svg>
+        </div>
+        <div class="installing-label">Installing Hinge&hellip;</div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 2: Hinge splash / create account (Figma node 19828:30649) ============ -->
+    <section class="screen s3-screen" data-screen="2">
+      <button class="back-chevron back-chevron--light" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <img src="images/hinge-splash-bg.jpg" alt="" class="s3-bg">
+      <div class="s3-bottom-scrim"></div>
+
+      <div class="s3-logo-block">
+        <img src="images/hinge-logo.svg" alt="Hinge" class="s3-logo">
+        <p class="s3-tagline">Designed to be deleted.</p>
+      </div>
+
+      <div class="s3-actions">
+        <p class="s3-legal">
+          By tapping 'Sign in' / 'Create account', you agree to our <span class="s3-link">Terms of Service</span>. Learn how we process your data in our <span class="s3-link">Privacy Policy</span> and <span class="s3-link">Cookies Policy.</span>
+        </p>
+        <div class="s3-buttons">
+          <button class="pill-btn pill-btn--full" onclick="goToScreen(3)">Create account</button>
+          <div class="s3-signin">Sign in</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 4: Tell us the basics ============ -->
+    <section class="screen basics-screen" data-screen="3">
+      <button class="back-chevron" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--dark">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#111"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#111"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#111"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#111"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#111"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#111"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#111"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#111"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#111"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#111"/></svg>
+        </span>
+      </div>
+
+      <div class="basics-content">
+        <h1 class="serif-headline serif-headline--center">Tell us the basics</h1>
+
+        <div class="input-box">
+          <label>First name</label>
+          <input type="text" placeholder="Your first name">
+        </div>
+        <div class="input-box">
+          <label>Age</label>
+          <input type="text" placeholder="Your age">
+        </div>
+        <div class="input-box">
+          <label>Gender</label>
+          <input type="text" placeholder="Your gender">
+        </div>
+        <div class="input-box">
+          <label>Sexuality</label>
+          <input type="text" placeholder="Your sexuality">
+        </div>
+
+        <button class="pill-btn basics-continue" onclick="goToScreen(4)">Continue</button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 5: Show a little more of who you are ============ -->
+    <section class="screen prompts-screen" data-screen="4">
+      <div class="statusbar statusbar--dark">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#111"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#111"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#111"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#111"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#111"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#111"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#111"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#111"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#111"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#111"/></svg>
+        </span>
+      </div>
+
+      <div class="prompts-topbar">
+        <button class="back-chevron back-chevron--inline" onclick="goBack()" aria-label="Back">&#8249;</button>
+        <button class="skip-pill">Skip</button>
+      </div>
+
+      <div class="prompts-content">
+        <h1 class="serif-headline">Show a little more of who you are</h1>
+        <p class="prompts-subtext">Add a photo and what you're excited for tonight to help people get to know you.</p>
+
+        <div class="upload-card" onclick="openPhotoSearch()">
+          <img id="uploadPreview" src="" alt="" class="upload-preview-img hidden">
+          <button class="pill-btn upload-pill" tabindex="-1">Upload a photo</button>
+        </div>
+
+        <div class="prompt-card">
+          <div class="prompt-card-header">What are you most excited for tonight?</div>
+          <input type="text" class="prompt-card-input" placeholder="Type your answer">
+        </div>
+
+        <button class="pill-btn pill-btn--full prompts-continue" onclick="goToScreen(5)">Continue</button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN (sub): Photo search — tap anywhere to select and return ============ -->
+    <section class="screen search-screen" data-screen="search">
+      <img src="images/photos-search-beth.png" alt="Photos search for Beth Solomon" class="search-img">
+      <div class="search-tap-overlay" onclick="selectSearchedPhoto()" role="button" aria-label="Select photo and continue"></div>
+    </section>
+
+    <!-- ============ SCREEN 6: Ready to connect ============ -->
+    <section class="screen interstitial-screen" data-screen="5">
+      <button class="back-chevron" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--dark">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#111"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#111"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#111"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#111"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#111"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#111"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#111"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#111"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#111"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#111"/></svg>
+        </span>
+      </div>
+
+      <div class="interstitial-content">
+        <h1 class="serif-headline serif-headline--center">Ready to connect with someone new?</h1>
+        <p class="interstitial-subtext">We'll give you a preview of who you could meet at the concert.</p>
+      </div>
+      <button class="pill-btn pill-btn--full interstitial-btn" onclick="goToScreen(6)">See who's out there</button>
+    </section>
+
+    <!-- ============ SCREEN 7: Blurred pre-event teaser grid ============ -->
+    <section class="screen discovery-screen" data-screen="6">
+      <button class="back-chevron" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--dark">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#111"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#111"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#111"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#111"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#111"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#111"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#111"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#111"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#111"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#111"/></svg>
+        </span>
+      </div>
+
+      <div class="discovery-header">
+        <h2 class="discovery-title">See Who's Going to The Strokes <span class="discovery-info">&#9432;</span></h2>
+      </div>
+
+      <div class="discovery-carousel" id="carousel-6"></div>
+
+      <button class="pill-btn pill-btn--full discovery-cta" onclick="goToScreen(7)">Continue</button>
+
+      <nav class="global-nav">
+        <div class="global-nav-row">
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-hinge-logo-active.svg" class="global-nav-icon global-nav-icon--active" alt="Home"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-star.svg" class="global-nav-icon" alt="Standouts"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-heart.svg" class="global-nav-icon" alt="Likes You"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-chatbubble.svg" class="global-nav-icon" alt="Matches"></div></div>
+          <div class="global-nav-item"><img src="images/nav-avatar-placeholder.png" class="global-nav-avatar" alt="Profile"></div>
+        </div>
+        <div class="global-nav-home-indicator"></div>
+      </nav>
+    </section>
+
+    <!-- ============ SCREEN 8: Concert has started ============ -->
+    <section class="screen interstitial-screen concert-screen" data-screen="7">
+      <button class="back-chevron back-chevron--light" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <img src="images/strokes-poster-crop.png" alt="" class="concert-bg">
+      <div class="concert-scrim"></div>
+
+      <div class="interstitial-content">
+        <h1 class="serif-headline serif-headline--center serif-headline--light">The concert has started!</h1>
+        <p class="interstitial-subtext concert-subtext">Get ready to meet someone new.</p>
+      </div>
+      <button class="pill-btn pill-btn--full interstitial-btn" onclick="goToScreen(8)">Reveal who's here</button>
+    </section>
+
+    <!-- ============ SCREEN 9: Discovery grid (full reveal) ============ -->
+    <section class="screen discovery-screen" data-screen="8">
+      <button class="back-chevron" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--dark">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#111"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#111"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#111"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#111"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#111"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#111"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#111"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#111"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#111"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#111"/></svg>
+        </span>
+      </div>
+
+      <div class="discovery-header">
+        <h2 class="discovery-title">The Strokes at Citi Field <span class="discovery-info">&#9432;</span></h2>
+      </div>
+
+      <div class="discovery-carousel" id="carousel-8"></div>
+
+      <button class="pill-btn pill-btn--full discovery-cta" onclick="goToScreen(9)">End of night</button>
+
+      <nav class="global-nav">
+        <div class="global-nav-row">
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-hinge-logo-active.svg" class="global-nav-icon global-nav-icon--active" alt="Home"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-star.svg" class="global-nav-icon" alt="Standouts"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-heart.svg" class="global-nav-icon" alt="Likes You"></div></div>
+          <div class="global-nav-item"><div class="global-nav-icon-box"><img src="images/nav-chatbubble.svg" class="global-nav-icon" alt="Matches"></div></div>
+          <div class="global-nav-item"><img src="images/nav-avatar-placeholder.png" class="global-nav-avatar" alt="Profile"></div>
+        </div>
+        <div class="global-nav-home-indicator"></div>
+      </nav>
+    </section>
+
+    <!-- ============ SCREEN 10: Event-over interstitial ============ -->
+    <section class="screen finaltake-screen" data-screen="9">
+      <button class="back-chevron back-chevron--light" onclick="goBack()" aria-label="Back">&#8249;</button>
+      <div class="statusbar statusbar--light">
+        <span class="statusbar-time">9:41</span>
+        <span class="statusbar-icons">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="0.5" fill="#fff"/><rect x="5" y="5" width="3" height="7" rx="0.5" fill="#fff"/><rect x="10" y="3" width="3" height="9" rx="0.5" fill="#fff"/><rect x="15" y="0" width="3" height="12" rx="0.5" fill="#fff"/></svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none"><path d="M8 10.5a1.4 1.4 0 100-2.8 1.4 1.4 0 000 2.8z" fill="#fff"/><path d="M8 6.2c1.6 0 3 .6 4.1 1.6l-1.2 1.3A4 4 0 008 7.9c-1.2 0-2.2.4-3 1.2L3.8 7.8A6 6 0 018 6.2z" fill="#fff"/><path d="M8 2.4c2.7 0 5.1 1 6.9 2.8l-1.2 1.3A8 8 0 008 4.4a8 8 0 00-5.7 2.1L1 5.2A10 10 0 018 2.4z" fill="#fff"/></svg>
+          <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="2.5" stroke="#fff"/><rect x="2" y="2" width="17" height="8" rx="1.2" fill="#fff"/><rect x="21.5" y="4" width="1.5" height="4" rx="0.7" fill="#fff"/></svg>
+        </span>
+      </div>
+
+      <img src="images/screen-9-bg.png" alt="" class="splash-bg">
+      <div class="splash-overlay"></div>
+
+      <div class="finaltake-close">&times;</div>
+
+      <div class="finaltake-content">
+        <h1 class="serif-headline serif-headline--light">The concert is over, but you can still connect.</h1>
+        <p class="finaltake-subtext">You'll have 24 hours to connect with others who love The Strokes as much as you do.</p>
+        <button class="pill-btn pill-btn--full pill-btn--white" onclick="restartDemo()">Let's go</button>
+      </div>
+    </section>
+
+    <!-- ============ SCREEN 8a: Send a Like (triggered from Screen 8's heart icon) ============ -->
+    <section class="screen sendlike-screen" data-screen="sendlike">
+      <img id="sendlikeBgPhoto" src="" alt="" class="sendlike-bg-photo">
+      <div class="sendlike-scrim"></div>
+      <div class="sendlike-modal">
+        <h1 class="sendlike-name" id="sendlikeName">Ryan</h1>
+        <div class="sendlike-promptcard">
+          <div class="sendlike-label" id="sendlikeLabel">What are you most excited for tonight?</div>
+          <div class="sendlike-answer" id="sendlikeAnswer">Last Nite, it's a jam</div>
+        </div>
+        <div class="sendlike-comment">
+          <input type="text" placeholder="Add a comment">
+        </div>
+        <button class="sendlike-send-btn" onclick="closeSendLike()">Send Like</button>
+        <div class="sendlike-cancel" onclick="closeSendLike()">Cancel</div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
