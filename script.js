@@ -177,8 +177,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     buildCarousel("carousel-6", PROFILES, {
       blurred: true,
-      promptLabel: PROMPT_LABEL,
-      showHeart: true
+      promptLabel: PROMPT_LABEL
     });
     buildCarousel("carousel-8", PROFILES, {
       blurred: false,
